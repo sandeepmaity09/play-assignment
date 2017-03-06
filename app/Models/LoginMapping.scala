@@ -1,17 +1,18 @@
 package Models
 
-import Models.PersonDetails
+
+import Models.LogingDetails
 
 import play.api.data.Form
 import play.api.data.Forms._
 
-object LoginMapping {
+object LogingDetailsMapping {
 
-  val LoginDetailsForm = Form {
-    tuple(
+  val LogingDetailsForm = Form {
+    Mapping(
       "username" -> text,
       "passwd" -> text
-    )
+    )(LogingDetailsMapping.apply)(LogingDetailsMapping.unapply)
   }
 
 }

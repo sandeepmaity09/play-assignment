@@ -12,6 +12,6 @@ class SignInController extends Controller {
 
   def signInProcess = Action { implicit request =>
     val(name,passwd) = LoginMapping.LoginDetailsForm.bindFromRequest.get
-    if(PersonService.personList)
+    if(personList.checkUs)
 
 }
