@@ -1,6 +1,7 @@
-@()
+@()(implicit flash:Flash)
 
 @main("Log In"){
+
 <script>
     function validate(){
     val x = document.forms["signinform"]["fname"].value;
@@ -15,6 +16,9 @@
         <div id="login" class="animate form">
             <h1> Sign In </h1>
             <form name="signinform" onsubmit="return validate()" method="post">
+
+                @flash.get("error").getOrElse("")
+
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="row">
