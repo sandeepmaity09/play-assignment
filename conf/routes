@@ -21,7 +21,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 GET     /signin                     controllers.SignInController.signInProcess
 GET     /signedin                   controllers.SignInController.signIn
 GET     /signup                     controllers.SignUpController.signUp
-POST    /addDetails                 controllers.PersonController.addPersonDetails
+POST    /addDetails                 controllers.SignUpController.addPersonDetails
 GET     /getDetails                 controllers.PersonController.getPersonDetails
 GET     /profile                    controllers.ProfileController.profile
 GET     /logout                     controllers.LogoutController.logout
