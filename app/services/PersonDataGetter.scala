@@ -4,7 +4,7 @@ import Models.PersonDetails
 
 class PersonDataGetter {
 
-  def userData(username:String):PersonDetails={
+  def personData(username:String):PersonDetails={
     val user=PersonService.personList.filter(_.username==username)
     user.head
   }

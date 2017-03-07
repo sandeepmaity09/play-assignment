@@ -6,7 +6,7 @@ import play.api.mvc._
 
 class SignInController extends Controller {
 
-  def signIn = Action {
+  def signIn = Action { implicit request =>
     Ok(views.html.signinpage())
   }
 
@@ -20,7 +20,7 @@ class SignInController extends Controller {
       person => {
         val flag:Boolean = PersonAuth.check(person)
         if(flag)
-          Redirect(routes.ProfilController.profile()).withSession(
+          Redirect(routes.ProfileController.profile()).withSession(
             "username" -> person.username
           )
         else {
