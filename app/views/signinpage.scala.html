@@ -2,23 +2,12 @@
 
 @main("Log In"){
 
-<script>
-    function validate(){
-    val x = document.forms["signinform"]["fname"].value;
-    if (x == ""){
-    return false;
-        }
-    }
-</script>
-
 <div>
     <div id="wrapper">
         <div id="login" class="animate form">
             <h1> Sign In </h1>
-            <form name="signinform" onsubmit="return validate()" method="post">
-
-                @flash.get("error").getOrElse("")
-
+            @flash.get("error").getOrElse("")
+            <form action="@routes.SignInController.signInProcess()" onsubmit="return validate()" method="get">
                 <div class="form-horizontal">
                     <div class="form-group">
                         <div class="row">
@@ -33,7 +22,7 @@
                         <div class="row">
                         <label class="control-label col-sm-2" for="passwd">Password:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="passwd"
+                            <input type="password" class="form-control" id="passwd"
                                    name="passwd" placeholder="Enter your password">
                         </div>
                         </div>

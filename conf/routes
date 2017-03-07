@@ -17,7 +17,9 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 # my controllers
 
-POST     /signin                     controllers.SignInController.signIn
+# GET     /signin                     controllers.SignInController.signIn
+GET     /signin                     controllers.SignInController.signInProcess
+GET     /signedin                   controllers.SignInController.signIn
 GET     /signup                     controllers.SignUpController.signUp
 POST    /addDetails                 controllers.PersonController.addPersonDetails
 GET     /getDetails                 controllers.PersonController.getPersonDetails

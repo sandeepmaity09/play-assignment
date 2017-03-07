@@ -1,11 +1,25 @@
 @()
 
 @main("sign up"){
+<script>
+    function validate(){
+    var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if((document.getElementById['mobile'].value.match(phoneno))
+       {
+           return true;
+       }
+    else
+       {
+           alert("message");
+           return false;
+       }
+}
+</script>
 <div id="container_demo">
     <div id="wrapper">
         <div id="login" class="animate form">
             <h1> Sign up </h1>
-            <form action="@routes.PersonController.addPersonDetails()" method="post">
+            <form action="@routes.PersonController.addPersonDetails()" onsubmit="return validate()" method="post">
                 <div class="form-inline">
                     <div class="row">
                         <div class="form-group">

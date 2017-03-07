@@ -9,14 +9,14 @@ object PersonDetailsMapping {
 
   val personDetailsForm : Form[PersonDetails] = Form {
     mapping(
-      "fName" -> text,
+      "fName" -> nonEmptyText,
       "mName" -> text,
-      "lName" -> text,
-      "email" -> text,
-      "username" -> text,
-      "passwd" -> text,
-      "mobile" -> number,
-      "gender" -> text,
+      "lName" -> nonEmptyText,
+      "email" -> nonEmptyText,
+      "username" -> nonEmptyText,
+      "passwd" -> nonEmptyText,
+      "mobile" -> nonEmptyText,
+      "gender" -> nonEmptyText,
       "age" -> number(min=18,max=75),
       "hobbies" -> text
     )(PersonDetails.apply)(PersonDetails.unapply)
